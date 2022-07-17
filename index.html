@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes bowling {
+        0% {
+          left: 600px;
+          top: 60px;
+        }
+        33% {
+          left: 350px;
+          top: 300px;
+        }
+        66% {
+          left: 280px;
+          top: 230px;
+        }
+        100% {
+          left: 600px;
+          top: 10px;
+        }
+      }
+      @keyframes shot {
+        0% {
+          transform: rotate(30deg);
+          transform-origin: top;
+        }
+        33% {
+          transform: rotate(0);
+          transform-origin: top right;
+        }
+        66% {
+          transform: rotate(40deg);
+          transform-origin: top;
+        }
+
+        100% {
+          transform: rotate(-60deg);
+          transform-origin: top;
+        }
+      }
+      .pitch {
+        background-image: url("images/pitch.jpg");
+        background-repeat: none;
+        height: 452px;
+        margin: 220px 600px;
+        position: relative;
+      }
+      .bat {
+        position: absolute;
+        transform: rotate(30deg);
+        left: 80px;
+        top: 120px;
+        animation: shot 2s ease-in-out 0s 1 alternate;
+      }
+      .ball {
+        width: 18px;
+        height: 18px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        left: 600px;
+        top: 150px;
+        animation: bowling 2s linear 0.5s 1 alternate;
+        animation-play-state: running;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pitch">
+      <img class="bat" src="images/bat.png" alt="" />
+      <div class="ball"></div>
+    </div>
+  </body>
+</html>
